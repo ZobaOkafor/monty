@@ -4,43 +4,48 @@
  * push - This function adds a new node to the stack
  * @stack: pointer to the head of the stack
  * @line_number: line number
- * @arg: argument for the push operation
  *
  * Return: No return value
  */
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	int i;
-	int n = 0;
-	char *arg = NULL;
 	/*FILE *file = NULL;*/
+	int value = 0;
+	int n, i = 0, fg = 0;
+	char /*content = NULL,*/ *arg = NULL;
 
-	if (!arg || (*arg == '-' && !arg[1]))
+	if (arg && arg[0] != '\0')
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	for (i = (*arg == '-'); arg[i]; i++)
-	{
-		if (arg[i] < '0' || arg[i] > '9')
+		if (arg[0] == '-')
+			i++;
+		for (i = 0; arg[i] != '\0'; i++)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			if(arg[i] > 57 || arg[i] < 48)
+				fg = 1;
+		}
+		if (fg == 1)
+		{
+			dprintf(2, "L%d: Usage: push int\n", line_number);
+			/*fclose(file);
+			free(content);*/
+			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
-		n = n * 10 + (arg[i] - '0');
 	}
-
-	addnode(stack, n);
-	/*file = fopen(arg[1], "a");
-	if (file == NULL)
+	else
 	{
-		fprintf(stderr, "Error: Unable to open the file\n");
+		dprintf(2, "L%d: Usage: push int\n", line_number);
+		/*fclose(file);
+		free(content);*/
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
-	fclose(file);*/
+	n = atoi(arg);
+	if (value == 0)
+		add_node(stack, n);
+	else
+		add_queue(stack, n);
 }
 
 
