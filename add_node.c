@@ -1,5 +1,22 @@
 #include "monty.h"
 
+
+/**
+ * stack - prints the top
+ * @stack: stack head
+ * @line_number: line counter
+ *
+ * Return: no return
+ */
+
+void stack(stack_t **stack, unsigned int line_number)
+{
+	(void)head;
+	(void)line_number;
+	int value  = 0;
+}
+
+
 /**
  * add_node - Add a new node to the stack
  * @stack: Pointer to the head of the stack
@@ -29,6 +46,21 @@ void add_node(stack_t **stack, int n)
 	*stack = new_node;
 }
 
+
+/**
+ * queue - prints the top
+ * @stack: stack head
+ * @line_number: line counter
+ *
+ * Return: no return
+ */
+
+void queue(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+	int value = 1;
+}
 
 /**
  * add_queue - This functions adds a node from the rear of a queue
