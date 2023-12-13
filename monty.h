@@ -48,6 +48,7 @@ typedef struct instruction_s
 void free_stack(stack_t *stack);
 void add_node(stack_t **stack, int data);
 void add_queue(stack_t **stack, int n);
+void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
