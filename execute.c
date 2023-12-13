@@ -16,6 +16,8 @@ int execute(char *content, stack_t **stack,
 	instruction_t insts[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	char *code;
