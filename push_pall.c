@@ -10,10 +10,9 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	/*FILE *file = NULL;*/
 	int value = 0;
 	int n, i = 0, fg = 0;
-	char /*content = NULL,*/ *arg = NULL;
+	char *arg = NULL;
 
 	if (arg && arg[0] != '\0')
 	{
@@ -21,14 +20,12 @@ void push(stack_t **stack, unsigned int line_number)
 			i++;
 		for (i = 0; arg[i] != '\0'; i++)
 		{
-			if(arg[i] > 57 || arg[i] < 48)
+			if (arg[i] > 57 || arg[i] < 48)
 				fg = 1;
 		}
 		if (fg == 1)
 		{
 			dprintf(2, "L%d: Usage: push int\n", line_number);
-			/*fclose(file);
-			free(content);*/
 			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
@@ -36,8 +33,6 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		dprintf(2, "L%d: Usage: push int\n", line_number);
-		/*fclose(file);
-		free(content);*/
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}

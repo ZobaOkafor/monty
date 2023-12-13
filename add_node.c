@@ -3,7 +3,7 @@
 /**
  * add_node - Add a new node to the stack
  * @stack: Pointer to the head of the stack
- * @data: Data to be stored in the new node
+ * @n: Data to be stored in the new node
  *
  * Return: Newly created node
  */

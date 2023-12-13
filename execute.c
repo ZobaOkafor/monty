@@ -10,7 +10,8 @@
  * Return: no return
  */
 
-int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file)
+int execute(char *content, stack_t **stack,
+		unsigned int line_number, FILE *file)
 {
 	instruction_t insts[] = {
 		{"push", push},
@@ -23,7 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file
 	code = strtok(content, " \n\t");
 	if (code && code[0] == '#')
 		return (0);
-	
+
 	/*arg = strtok(NULL, " \n\t");*/
 	while (insts[i].opcode && code)
 	{
