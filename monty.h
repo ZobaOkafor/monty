@@ -43,6 +43,7 @@ typedef struct instruction_s
 
 
 /* Function Prototypes */
+void free_stack(stack_t *stack);
 int is_numeric(const char *str);
 void push_value(stack_t **stack, int value);
 void push(stack_t **stack, unsigned int line_number);
