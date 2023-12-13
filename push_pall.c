@@ -7,10 +7,10 @@
  * @line_number: line number in the file
  */
 
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number, int value)
 {
 	char *arg;
-	int value;
+	/*int value;*/
 
 	arg = strtok(NULL, " \t\n");
 	if (arg == NULL || !is_numeric(arg))
