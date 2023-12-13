@@ -46,13 +46,10 @@ typedef struct instruction_s
 
 /* Function Prototypes */
 void free_stack(stack_t *stack);
-int is_numeric(const char *str);
-void push_value(stack_t **stack, int value);
+stack_t *addnode(stack_t **stack, int data);
 void push(stack_t **stack, unsigned int line_number);
-/*void push(stack_t **stack, unsigned int line_number, int value);*/
 void pall(stack_t **stack, unsigned int line_number);
-void execute_opcode(stack_t **stack, unsigned int line_number, char *line);
-void process_line(char *line, unsigned int line_number, stack_t **stack);
+int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file);
 
 
 #endif
