@@ -20,7 +20,8 @@ void nop_ops(stack_t **stack, unsigned int line_number)
 
 
 /**
- * pchar_ops - This function prints the ASCII value of the top element of the stack
+ * pchar_ops - This function prints the ASCII value
+ * of the top element of the stack
  * @stack: Pointer to the top of the stack
  * @line_number: Line number in the Monty file
  *
