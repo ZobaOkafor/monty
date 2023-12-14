@@ -73,7 +73,7 @@ void pstr_ops(stack_t **stack, unsigned int line_number)
 	while (temp)
 	{
 		c = temp->n;
-		if (c == 0 || !isprint(c) == 0)
+		if (c == 0 || isprint(c) == 0)
 			break;
 		putchar(c);
 		temp = temp->next;
