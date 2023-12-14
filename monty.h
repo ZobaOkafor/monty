@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define STACK_SIZE 1000
 #define _POSIX_C_SOURCE 200809L
 
 #include <unistd.h>
@@ -43,18 +44,39 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * stacks - stacks
+ * @stack: stack size
+ * @top: top of stack
+ *
+ * Description: node structure
+ */
+typedef struct stacks 
+{
+        int stack[STACK_SIZE];
+        int top;
+} Stack;
+
+Stack stack;
+
 
 /* Function Prototypes */
 void free_stack(stack_t *stack);
 void add_node(stack_t **stack, int data);
 void add_queue(stack_t **stack, int n);
-void pop(stack_t **stack, unsigned int line_number);
+/*void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);*/
 void queue(stack_t **stack, unsigned int line_number);
-void stack(stack_t **stack, unsigned int line_number);
+/*void stack(stack_t **stack, unsigned int line_number);*/
 int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file);
+
+
+void push(int value, int line_number);
+void pall(void);
+void pint(int line_number);
+void pop(int line_number);
 
 
 #endif
