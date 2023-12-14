@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
 	int value, line_number = 0;
 
 	if (argc != 2)
-	{	fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-		return (EXIT_FAILURE); }
+	{	fprintf(stderr, "Usage: monty file\n");
+		exit(EXIT_FAILURE); }
 	file = fopen(argv[1], "r");
 	if (file == NULL)
-	{	perror("Error opening file");
-		return (EXIT_FAILURE); }
+	{	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE); }
 	while (fgets(line, sizeof(line), file) != NULL)
 	{	line_number++;
 		len = strlen(line);
@@ -38,16 +38,16 @@ int main(int argc, char *argv[])
 				else
 				{	fprintf(stderr, "L%d: Usage: push integer\n", line_number);
 					fclose(file);
-					return (EXIT_FAILURE); } }
+					exit(EXIT_FAILURE); } }
 			else if (strcmp(opcode, "pall") == 0)
 				pall();
 			else
 			{	fprintf(stderr, "L%d: unknown opcode %s\n", line_number, opcode);
 				fclose(file);
-				return (EXIT_FAILURE); } }
+				exit(EXIT_FAILURE); } }
 		else
 		{	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			fclose(file);
-			return (EXIT_FAILURE); } }
-	return (EXIT_SUCCESS);
+			exit(EXIT_FAILURE); } }
+	return (0);
 }
