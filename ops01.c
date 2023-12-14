@@ -32,12 +32,9 @@ void pchar_ops(stack_t **stack, unsigned int line_number)
 {
 	int value;
 
-	if (*stack == NULL) /*|| *stack == NULL)*/
+	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
-		/*free(gee_var.buff);
-		fclose(gee_var.file);
-		free_stack(*stack);*/
 		exit(EXIT_FAILURE);
 	}
 
@@ -46,9 +43,6 @@ void pchar_ops(stack_t **stack, unsigned int line_number)
 	if (value > 127 || value < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-		/*free(gee_var.buff);
-		fclose(gee_var.file);
-		free_stack(*stack);*/
 		exit(EXIT_FAILURE);
 	}
 
