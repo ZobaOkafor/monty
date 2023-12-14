@@ -61,7 +61,7 @@ Stack stack;
 
 
 /* Function Prototypes */
-void free_stack(stack_t *stack);
+void free_stack(Stack *stack);
 void add_node(stack_t **stack, int data);
 void add_queue(stack_t **stack, int n);
 /*void pop(stack_t **stack, unsigned int line_number);
